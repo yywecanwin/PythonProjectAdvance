@@ -4,6 +4,8 @@
 import multiprocessing
 import time
 
+#进程与进程之间相互独立
+
 # # 测试代码
 # reult = type([])
 # print(type(reult)) #<class 'type'>
