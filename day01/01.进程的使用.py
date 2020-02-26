@@ -5,6 +5,7 @@
 import multiprocessing
 import time
 
+
 def dance():
     for i in range(3):
         print("跳舞中。。。。。")
@@ -13,14 +14,15 @@ def dance():
 
     pass
 
+
 def sing():
     for i in range(3):
         print("唱歌中。。。。。")
         time.sleep(0.2)
         pass
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     # dance()
     # sing()
 
@@ -30,11 +32,7 @@ if __name__ == '__main__':
     sub_process1 = multiprocessing.Process(target=dance)
     sub_process2 = multiprocessing.Process(target=sing)
 
-
     # 3.启动进程执行对应的任务
     sub_process1.start()
     sub_process2.start()
     pass
-
-
-
