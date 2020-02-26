@@ -5,6 +5,8 @@ import threading
 
 # 定义全局变量
 g_num = 0
+
+
 # 循环1000000次：每循环一次结合全局变量加1
 def calc_num1():
     # 声明此处加上global表示修改全局变量的内存地址
@@ -12,7 +14,7 @@ def calc_num1():
     for i in range(1000000):
         g_num += 1
         pass
-    print("calc_num1:",g_num)
+    print("calc_num1:", g_num)
 
     pass
 
@@ -28,6 +30,7 @@ def calc_num2():
 
     pass
 
+
 if __name__ == '__main__':
     # 创建第一个子线程
     first_thread = threading.Thread(target=calc_num1)
@@ -40,8 +43,4 @@ if __name__ == '__main__':
     first_thread.join()
     second_thread.start()
 
-
-
-
     pass
-
