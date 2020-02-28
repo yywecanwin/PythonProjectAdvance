@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>局部变量和全局变量</title>
+    <script>
+        //定义全局变量
+        var iNUm1 = 20;
+
+        //定义函数
+        // function info() {
+        //     //定义局部变量，局部变量只能在函数内部使用，在函数外不能访问和使用
+        //     var iNum = 10;
+        //     alert(iNum)
+        // }
+
+        function sum(){
+            //测试在函数内使用全局变量
+            // alert(iNUm1);
+            var result = iNUm1 +20;
+            //自加1
+            iNUm1 ++;
+            iNUm1 += 20;
+        }
+
+        //调用函数
+        // info();
+
+        //测试在外部使用局部变量
+        // alert(iNUm)
+
+        sum();
+        //外部使用全局变量
+        alert(iNUm1)
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
