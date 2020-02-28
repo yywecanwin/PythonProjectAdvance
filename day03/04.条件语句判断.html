@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+
+        <!---->
+        var iNum1 = 10;
+        var iStr = '10';
+
+        //字符串和数字比较的时候，先把字符串转成数字，然后再进行比较
+        //把字符串转成数字类型这个操作是自动转换的，也称为自动类型转化
+        <!--
+            注：
+                iNum1（int类型）与iStr(string类型)之所以相同，是因为里面数字相同。否则两者是不相同的
+
+        -->
+        // if (iNum1 == iStr){
+        //     alert("条件成立");
+        //
+        // } else {
+        //
+        //     alert("条件不成立");
+        // }
+
+        //这样条件是成立的，以为数字不相同
+        // if (iNum1 > iStr){
+        //     alert("条件成立");
+        //
+        // } else {
+        //
+        //     alert("条件不成立");
+        // }
+
+    //    以后再进行条件语句判断的时候需要判断类型和数据都相同可以使用“===”
+    //     if(iNum1 == iStr){
+    //         alert("条件成立");
+    //     }else {
+    //         alert("条件不成立");
+    //     }
+
+        // var bIsOk = true;
+
+        // if(bIsOk){
+        //     alert('条件成立:' + bIsOk);
+        // }
+
+            // if 结合逻辑运算符(&&, ||, !)
+        var iNum2 = 3, iNum3 = 4;
+
+        // if (iNum2 > 1 && iNum3 > 2) {
+        //     alert('条件成立');
+        // } else {
+        //     alert('条件不成立');
+        // }
+
+        // if (iNum2 > 1 || iNum3 < 2) {
+        //     alert('条件成立');
+        // } else {
+        //     alert('条件不成立');
+        // }
+
+        // var bIsOk = false;
+
+        // if (!bIsOk) {
+        //     alert('条件成立');
+        // }else {
+        //     alert('条件不成立');
+        // }
+
+        if (!(iNum2 > 1 || iNum3 < 2)) {
+            alert('条件成立');
+        } else {
+            alert('条件不成立');
+        }
+
+
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
