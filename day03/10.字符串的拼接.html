@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var sStr1 = 'abc';
+        var sStr2 = 'bcd';
+        var result = sStr1 + sStr2;
+        // alert(result);
+
+        var sStr3 = 'hello';
+        sStr3 += 'world';
+        // alert(sStr3)
+
+        //特殊，字符串和数字类型进行+运算，得到的结果是字符串
+        var iNum1 = 10.1;
+        var aStr4 = '您好';
+        //字符串和数字进行（+）号运算，会把数字转成字符串进行拼接字符串的， 得到的是字符串
+        var value = iNum1 + aStr4;
+        // alert(value)
+
+        var sStr5 = '10.5';
+        var sStr6 = '20.1';
+
+        var result = sStr5 + sStr6;
+        // alert(result)
+
+        //  对字符串进行类型转换
+        //  字符串转成float类型
+        var result = parseFloat(sStr5) + parseFloat(sStr6);
+        // alert(result);
+
+        //  字符串转成int类型
+        var result = parseInt(sStr5) + parseInt(sStr6);
+        alert(result);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
