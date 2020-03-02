@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+          //  1. 通过Object类型创建自定义的JavaScript对象
+        var oPerson = new Object();
+        //  添加属性和添加方法
+        oPerson.name = '张三';
+        oPerson.age = 20;
+        oPerson.sayHello = function(){
+            alert('hello');
+        }
+
+        //  通过对象调用属性和方法
+        // alert(oPerson.name + oPerson.age);
+        // oPerson.sayHello()
+        // 'json数据' -> '{"name":"李四"}'
+
+        //  2. 通过字面量的方式创建自定义的JavaScript对象
+        //  推荐使用下面的方式创建JavaScript对象
+        var oStudent = {
+            name: "李四",
+            age: 18,
+            sayHello:function(){
+                alert("李四");
+            }
+        }
+
+        //  通过对象条用属性和方法
+        // alert(oStudent.name + oStudent.age);
+        // oStudent.sayHello()
+
+
+        // 虽然下面的写法是可以的，但是不推荐大家这样去写
+        var oStudent1 = {
+            "name": "李四",
+            "age": 18,
+            "sayHello":function(){
+                alert("李四");
+            }
+        }
+
+        alert(oStudent1.name + oStudent1.age);
+        oStudent1.sayHello()
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
