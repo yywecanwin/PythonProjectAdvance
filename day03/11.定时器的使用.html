@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //无参数的函数
+        // function show_info() {
+        //     alert('大家好，我是Tom');
+        //     //清楚定时器
+        //     clearTimeout(t1)
+
+        // }
+        // show_info()
+        // 创建定义的方式1， 延时调用一次指定的函数
+        // 1. 执行的函数名
+        // 2. 延时的时间(单位是毫秒 1秒=1000毫秒)
+        // 3. 返回值是定时器的标识符，好比是创建的第几个定时器
+        // var t1 = setTimeout(show_info, 1000);
+        // alert(t1);
+
+        // ---------------有参数的函数
+        function show_info(info){
+            alert(info);
+            // 清除定时器
+            clearTimeout(t2);
+        }
+        // show_info();
+        // var t2 = setTimeout(show_info, 1000, '大家好!');
+
+
+         // -------循环根据指定事件执行对应的函数
+        var count = 1;
+        function show_msg(a, b){
+            var result = a + b;
+            alert(result);
+
+            //  判断一下，如果执行了3次，把定时器清除
+            if(count==3) {
+                clearInterval(t3);
+            }
+            count += 1;
+
+        }
+
+        var t3 = setInterval(show_msg, 500, 10, 20);
+
+
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
