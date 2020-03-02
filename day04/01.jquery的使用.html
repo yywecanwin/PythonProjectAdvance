@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--使用jQuery之前，需求引入js文件（jquery封装js的代码文件）-->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        //原始js代码
+        window.onload = function () {
+            alert('js');
+            var oDiv = document.getElementById('mydiv');
+            //设置文字颜色
+            oDiv.style.color = 'red';
+        };
+
+        // jquery, 对应jquery来说 $ 符号就是jquery的象征
+        // $ 它是一个函数，只不过这个函数名就是$
+        $(document).ready(function () {
+            alert('jquery');
+            //使用jquery的方式来获取标签对象
+            //如果是jquery对象，那么需要使用$div
+            var $div = $("#mydiv");//jquery的获取标签匹配规则和css选择器的匹配规则一样
+            $div.css({background:'green'});
+        });
+        //  总结: ready 等待页面所有元素加载完成以后就会执行， onload是等待页面所有元素加载完成并且还要等待数据加载完成以后才会执行
+        //  得出的结论是ready比onload先执行
+
+        //jquery简写方式
+        $(function () {
+            var $div = $("#mydiv") //jquery的获取标签的匹配规则和css选择器的匹配规则一样
+            $div.css({background: "red"});
+        })
+
+    </script>
+</head>
+<body>
+    <div id='mydiv'>哈哈哈</div>
+    <img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1550543057&di=da3919f2d4ad9afa930a5bfcd6ce54a2&src=http://img17.3lian.com/d/file/201703/11/73b0ec6f5b8221dd544810f7d98596d2.jpg" alt="">
+
+
+</body>
+</html>
