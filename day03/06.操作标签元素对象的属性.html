@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        .mya {
+            color: yellow;
+            font-size: 30px;
+        }
+        .myb {
+            color: blueviolet;
+            font-size: 50px;
+        }
+    </style>
+
+
+
+    <script>
+        window.onload = function () {
+            //页面加载完成的时候获取iput标签
+            var oInput = document.getElementById('uid');
+            var oA = document.getElementById('link1');
+
+            alert(oInput);
+            alert(oA);
+            //对象获取成功以后，对属性进行读取
+            var name = oInput.name;
+            var value = oInput.value;
+            var type = oInput.type;
+            console.log("name:" + name);
+            console.log("value:" + value);
+            console.log("type:" + type);
+
+            // 对属性进行设置
+            oA.style.color = 'red';
+            // aA.style.fontSize = '30px';
+            alert(oA.id);
+
+            //  设置class属性，class = 'mya'
+            oA.className = "myb";
+
+        }
+
+    </script>
+
+</head>
+<body>
+    <input type="text" name="username" id="uid" value="李四">
+
+    <a href="http://www.baidu.com" class="mya" id="link1">百度</a>
+
+</body>
+</html>
