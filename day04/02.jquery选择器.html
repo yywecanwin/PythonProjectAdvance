@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        //  提示: 获取页面上的标签元素，需要在入口函数进行获取， 入口函数指的就是加载完成事件执行的函数
+        $(function () {
+            // jquery选择器是用匹配和获取html标签的，匹配规则和css选择器的匹配规则一致
+            //1.标签选择器
+            var $p = $('p');
+            // alert($p);
+            //2.类选择器
+            var $p2 = $(".myp");
+            // alert("p2:" + $p2);
+
+            //3,id选择器
+            var $p3 = $('#mythreep');
+            // alert("p3:" + $p3);
+
+            //4.层级选择器
+            var $p4 = $("div p");
+            // alert("p4:" + $p4);
+
+            //5.属性选择器
+            var $p5 = $("p[name=fivep]");
+            $p5.css({background:'green'});
+            var $p6 = $("p[id=sixp]");
+            $p6.css({background:'yellow'});
+
+        })
+
+
+    </script>
+</head>
+<body>
+    <p>我一个段落标签</p>
+    <p class="myp">我一个段落标签</p>
+    <p id="mythreep">我一个段落标签</p>
+    <div>
+        <p>我一个段落标签</p>
+    </div>
+    <p name='fivep'>我一个段落标签</p>
+    <p id="sixp">我一个段落标签</p>
+
+</body>
+</html>
