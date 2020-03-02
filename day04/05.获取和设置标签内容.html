@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--!&#45;&#45; 引入js文件的目的，就是需要使用jquery封装好的函数 &ndash;&gt;-->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $div = $("div");
+            alert($div);
+
+            //获取标签内容
+            var content = $div.html()
+            alert(content)
+
+            //设置标签内容
+            $div.html("<a href='http://www.baidu.com'>百度</a>>");
+            //追加内容, append
+            $div.append("<a href='http://www.baidu.com'>谷歌</a>")
+
+        });
+    </script>
+
+</head>
+<body>
+<div>
+    <p>hello1</p>
+    <p>hello2</p>
+    <div>
+        <p>ass</p>
+    </div>
+</div>
+
+</body>
+</html>
