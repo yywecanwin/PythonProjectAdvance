@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+    </style>
+
+    <script>
+        $(function () {
+            //获取input标签
+            var $button = $("#mybutton");
+            var $text = $("#mytext");
+            var $div = $("div");
+
+            //设置点击事件
+            $button.click(function () {
+                var sValue = $text.val();
+                alert("你点我了：" + sValue);
+            });
+
+            //设置获取焦点事件
+            $text.focus(function () {
+                $text.css({background:'red'});
+            })
+
+            // 设置失去焦点事件
+            $text.blur(function () {
+                $text.css({background:"white"});
+
+            })
+
+            //设置鼠标进入事件
+            $div.mouseover(function () {
+                $div.css({width:"200px", height:"200px", background: "red"});
+            })
+               //  设置鼠标离开事件
+            $div.mouseout(function(){
+                $div.css({width:"100px", height:"100px", background: "green"});
+            })
+
+        })
+    </script>
+
+
+</head>
+<input type="text" id="mytext">
+<input type="button" value="按钮" id="mybutton">
+
+<div>
+    <p>我是一个段落标签</p>
+</div>
+<body>
+
+
+</body>
+</html>
