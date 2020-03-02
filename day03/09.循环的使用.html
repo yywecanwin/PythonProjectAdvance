@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        //定义数组
+        var oArray = ['杨幂', '张杰', '刘德华'];
+        //for循环遍历数组中的每一个元素
+        // for(var i=0;i<oArray.length;i++){
+        //     //根据下标获取对应的元素
+        //     var value = oArray[i];
+        //     alert(value);
+        // }
+        //while循环的使用
+        // var index = 0;
+        // while (index < oArray.length){
+        //     //根据下标获取对应的元素
+        //     var value = oArray[index];
+        //     alert(value);
+        //     index ++;
+        // }
+
+        //do-while循环，do-while循环，条件不成立do语句循环执行
+        //但是while语句只有条件成立才会执行
+        var index = 50;
+        do{
+            alert("即使条件不成立我也要执行一次");
+            var value = oArray[index];
+            alert(value);
+            index ++;
+            
+        }while (index < oArray.length)
+        
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>
