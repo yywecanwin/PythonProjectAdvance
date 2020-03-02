@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+
+    <script>
+       $(function () {
+           //获取ul标签里面所有的li标签
+           // var $lis = $("ul li");
+           // //给所有的li标签绑定click事件，内部封装了循环遍历给每一个li标签绑定click事件
+           // $lis.click(function () {
+           //     alert("你点击我了");
+           //     //当前点击的是那个li标签，$(this)
+           //     $(this).css({background:'red'});
+           //
+           // })
+
+           //使用事件代理的方式解决上面的多次绑定事件的问题
+           //父元素代理子元素的事件，通过事件点击的来源，让事件代理触发执行指定的子元素操作
+           var $ul = $('ul');
+           //设置事件代理，事件代理元素只绑定了一次点击事件，提高代码性能
+           $ul.delegate("li","click",function () {
+               $(this).css({background:"blue"})
+           })
+
+       }) 
+
+    </script>
+</head>
+<body>
+<ul>
+    <li>第一项</li>
+    <li>第二项</li>
+    <li>第三项</li>
+</ul>
+
+</body>
+</html>
