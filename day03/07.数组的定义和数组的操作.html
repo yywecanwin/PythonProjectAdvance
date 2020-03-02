@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        // 定义数组, 好比Python里面的列表
+        var oArray1 = new Array("苹果", "香蕉", "草莓", 3, 2);
+
+        //  根据下标修改指定个数的数据
+        //  -------------修改操作----------------
+        //  第一个参数是操作的下标
+        //  第二个参数是删除的个数
+        //  第三个参数是添加的数据
+        oArray1.splice(0, 2, '西瓜');
+        console.log(oArray1);
+
+        // oArray1.splice(0, 2, '西瓜', '鸭梨');
+        // console.log(oArray1);
+
+        // 根据下标修改元素
+        oArray1.splice(1, 1, '榴莲');
+        console.log(oArray1);
+
+
+        // 根据下标2删除一个元素
+        // oArray1.splice(2, 1);
+        // console.log(oArray1);
+        //  --------------删除操作-------------
+        //  第一个参数是操作的下标
+        //  第二个参数是删除的格式
+        oArray1.splice(2, 2);
+        console.log(oArray1);
+
+
+        //  根据指定下标插入指定元素
+        //  --------------添加操作-------------
+        //  第一个参数是操作的下标
+        //  第二个参数是删除的个数
+        //  第三个参数是添加的数据包括后面的都是添加数据
+        oArray1.splice(1, 0, 4);
+        console.log(oArray1);
+        oArray1.splice(1, 0, 5, 6);
+        console.log(oArray1);
+
+        console.log(oArray1);
+        console.log("oArray1:" + oArray1);
+        // 字面量， 直接使用数组定义
+        var oArray2 = ["貂蝉", "西施", "杨玉环", "王昭君", 2, 4];
+        console.log(oArray2);
+        // 定义多维数组
+        var oArray3 = [[1,2], [3,4]];
+        console.log(oArray3);
+
+        // 获取数组的长度(个数)
+        console.log("oArray1:" + oArray1.length);
+        console.log("oArray2:" + oArray2.length);
+        console.log("oArray3:" + oArray3.length);
+        // 根据下标获取对应的元素
+        value = oArray1[1];
+        alert(value);
+        // 不支持负数下标
+        // value = oArray1[-1];
+        // alert(value);
+
+        //  追加一个元素
+        oArray1.push(5);
+        console.log("oArray1:" + oArray1);
+        // 删除最后一个元素
+        oArray1.pop();
+        console.log(oArray1);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
