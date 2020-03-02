@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <!-- 使用jquery文件 -->
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+
+        $(function () {
+            //  代码能够执行这个函数，说明页面的标签加载完成。
+            //  向web服务器发送ajax请求，其实本质上发送的是一个http请求
+           /*
+            $.ajax({
+                url: "data/data.json",
+                method:"GET",
+                data:{"name":"hello"},
+                dataType:"json",
+                success:function (data) {
+                    //因为已经知道了dataType， 数据会进行json字符串转javascript对象的操作
+                    //也就是说data目前就是一个javascript对象
+                    alert(data.name);
+                     $("div").html(data.name);
+
+
+                },
+                error:function () {
+                    alert("网络异常");
+                },
+                //true表示发送异步ajax请求
+                async:true
+            })
+            */
+           $.ajax({
+                // 下面的写法，发送ajax请求的时候，这个URL会自动拼接成类似于这样的地址
+                // http://localhost:9000/data/data.json
+                // url:"http://localhost:9000/data/data.json",
+                //  如果请求地址开头有'/'，那么在进行url地址拼接的时候就不需要加上这个/
+                // 如果这个地址前面没有'/'，那么在进行url地址拼接的时候就会自动加上这个/
+                url:"data/data.json",
+                method:"POST",
+                data:{"name":"hello"},
+                dataType:"json",
+                success:function(data){
+                    //  因为已经知道了dataType， 数据会进行json字符串转javascript对象的操作
+                    //  也就是说data目前就是一个javascript对象
+                    // alert(data.name);
+                    //  把ajax请求或的后台数据绑定给指定标签
+                    $("div").html(data.name);
+
+                },
+                error: function(){
+                    alert('网络异常');
+                },
+                // true表示发送异步的ajax请求
+                async:true
+           });
+        });
+    </script>
+</head>
+<body>
+<div></div>
+
+</body>
+</html>
