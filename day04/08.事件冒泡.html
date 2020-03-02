@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <style>
+        .mydiv1{
+            width: 200px;
+            height: 200px;
+            background: red;
+        }
+        .mydiv2{
+            width: 100px;
+            height: 100px;
+            background: green;
+        }
+
+    </style>
+
+    <script>
+        //下面的代码是测试事件冒泡
+        $(function () {
+            var $div1 = $(".mydiv1");
+            var $div2 = $(".mydiv2");
+
+            $div2.click(function () {
+                alert("子div");
+            })
+
+            $div1.click(function(){
+                alert("子div点击 我父div也出发点击事件，因为事件会进行冒泡，会向上传递");
+            })
+        })
+
+    </script>
+
+
+</head>
+<body>
+    <div class="mydiv1">
+
+        <div class="mydiv2">
+            我是子div
+        </div>
+
+    </div>
+
+</body>
+</html>
