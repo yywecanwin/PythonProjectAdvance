@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function(){
+            //  获取div标签
+            var $div = $("div");
+            //  获取上一个同级元素
+            $div.prev().css({color: "green"});
+            //  获取上面所有的同级元素
+            $div.prevAll().css({color: "red"});
+            //  获取下一个同级元素
+            $div.next().css({color: "blue"});
+            //  获取下面所有的同级元素
+            $div.nextAll().css({color: "yellow"});
+            //  获取父元素
+            $div.parent().css({background: "gray"});
+            //  获取所有的子元素
+            $div.children().css({color:"green", "font-size":"30px"});
+            //  获取同级的其它元素
+            $div.siblings().css({color: "red"});
+            //  根据标签获取指定元素
+            $div.find(".myspan").css({color: "blue"});
+
+
+        })
+    </script>
+</head>
+<body>
+
+    <h1>我是一级标题</h1>
+    <p>我是一个段落标签</p>
+    <div>我是一个<span>div</span><span class="myspan">标签</span></div>
+    <h1>我是一级标题</h1>
+    <p>我是一个段落标签</p>
+
+</body>
+</html>
