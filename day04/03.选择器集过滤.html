@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    
+    <script>
+        $(function () {
+            //在入口函数获取页面标签元素
+            var $div = $("div");
+            alert($div.length);
+
+            //length作用。可以判断是否选择到了指定标签。如果length>表示选择到了指定标签
+            //否则表示没有选择成功
+            if ($div.length > 0){
+                alert("选择成功");
+            }
+
+            //如何对集合进行筛选，其实就是选择集过滤
+            //选择的是第一个div，因为第一div有p标签
+            $div.has('p').css({background:"red"});
+
+             //  根据下标获取指定标签
+            $div.eq(1).css({background:"green"});
+
+
+        })
+    </script>
+    
+</head>
+<body>
+    <div>
+        <p>我是一个段落标签</p>
+    </div>
+    <div>
+        我是一个div标签
+    </div>
+
+</body>
+</html>
