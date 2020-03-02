@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+        $(function () {
+            var $input = $("mytext");
+            var $a = $("a");
+            alert($input)
+            //  通过prop方法获取标签的其它属性
+            var sName = $input.prop("name");
+            alert(sName);
+            var sType = $input.prop("type");
+            alert(sType);
+            var sId = $input.prop("id");
+            alert(sId);
+            var sValue = $input.prop("value");
+            alert(sValue);
+            //  如果获取标签的value值，可以使用val方法
+            var sValue1 = $input.val();
+            //  通过prop方法设置标签的其它属性
+            $a.prop({href:"http://www.baidu.com", id:"mylink"});
+        })
+    </script>
+</head>
+<body>
+
+    <input type="text" name="username" id="mytext" value="hello">
+    <a>哈哈</a>
+
+</body>
+</html>
