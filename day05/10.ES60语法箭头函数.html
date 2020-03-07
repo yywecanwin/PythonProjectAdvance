@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>08-ES60语法</title>
+    <script>
+        window.onload = function () {
+            // 6.0 箭头 函数 写法
+            var fnOne = ()=>{
+
+            }
+            var fnTwo = (a,b)=>{
+
+            }
+            var fnThre = a=>{
+
+            }
+
+            // 2. 理解作用: 修改this的指向 指向window 改成 操作的对象
+            var oBtn = document.getElementById('btn')
+
+            oBtn.onclick = function () {
+
+                console.log('在第一层 {}---this--' + this)
+                // 1秒钟 之后 弹提示框
+                setTimeout( ()=> {
+
+                    alert('之后 弹提示框')
+
+                    console.log('在定时器 {}---this--' + this)
+
+                    this.style.color = "red";
+
+                },1000)
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <button id="btn">点击按钮</button>
+</body>
+</html>

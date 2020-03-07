@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./js/vue.min.js"></script>
+    <style>
+        .red{
+            color: red;
+        }
+        .font{
+            font-size: 20px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+
+            // 关联vue对象
+            var vm = new Vue({
+                el:".box",
+                data:{
+                    counter:0,
+                    isRed:false,
+                    message:'ABCDEFG',
+                },
+                // methods:{
+                //     fnAdd:function(){
+                //         this.counter ++
+                //     }
+                // }
+            })
+            
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        
+        <!-- 3.js表达式 字符串反转 倒置 -->
+        <p>{{ message.split('').reverse().join('') }}</p>
+        <!-- 2.三目运算 三元运算 条件表达式?A:B-->
+        <p v-bind:class="isRed?'red':'font'">三目运算 三元运算 条件表达式?A:B</p>
+        <!-- 1.计算 累加{{}} v-on  -->
+        <button v-on:click="counter ++ ">{{ counter }}</button>
+        <!-- <button v-on:click="fnAdd">{{ counter }}</button> -->
+    </div>
+    
+</body>
+</html>

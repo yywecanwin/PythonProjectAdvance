@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .list_con{
+                width:600px;
+                margin:50px auto 0;
+            }
+            .inputtxt{
+                width:550px;
+                height:30px;
+                border:1px solid #ccc;
+                padding:0px;
+                text-indent:10px;			
+            }
+            .inputbtn{
+                width:40px;
+                height:32px;
+                padding:0px;
+                border:1px solid #ccc;
+            }
+            .list{
+                margin:0;
+                padding:0;
+                list-style:none;
+                margin-top:20px;
+            }
+            .list li{
+                height:40px;
+                line-height:40px;
+                border-bottom:1px solid #ccc;
+            }
+
+            .list li span{
+                float:left;
+            }
+
+            .list li a{
+                float:right;
+                text-decoration:none;
+                margin:0 10px;
+            }
+    </style>
+    <script type="text/javascript" src="js/vue.min.js"></script>
+    <script>
+        window.onload = function() {
+
+            // 1.该标签 绑定vue 指令 v-on v-bind v-model
+           
+            // 2.关联对象
+            var vm = new Vue({
+                el:'.list_con',
+                data:{
+                    contentInput:'qwqw',
+                    dataList:["学习Python","学习JQUery","学习VUE"],
+
+                },
+
+                methods: {
+                    // 3.监听增加 事件
+                    fnAdd:function(){
+
+                        // 4.判断是否为空
+                        if(this.contentInput==""){
+                            alert("输入的内容不能为空")
+                            return;
+                        }
+
+                        // 5.插入数据 给数组增加数字
+                        this.dataList.push(this.contentInput)
+
+                        // 清空
+                        this.contentInput = ""
+                    },
+                    // 6.监听删除 数据
+                    fnDel:function (index) {
+                        this.dataList.splice(index,1);
+                    },
+                    // 7.上下排序
+                    fnUp:function(index){
+                        //1.获取C
+                        var currentData = this.dataList[index];
+                        // 2.删除C
+                        this.dataList.splice(index,1);
+                        //3.指定位置插入
+                        this.dataList.splice(index-1,0,currentData);
+
+                    },
+                    // 7.下排序
+                    fnDown:function(index){
+                        //1. 获取C
+                        var currentData1 = this.dataList[index] 
+
+                        //2. 删除c
+                        this.dataList.splice(index,1);
+
+                        //3.指定位置插入C\
+                        this.dataList.splice(index+1,0,currentData1);
+
+                    }
+
+                },
+                
+            })
+
+            
+
+            
+
+           
+
+
+            
+
+        }
+    </script>
+</head>
+<body>
+        <div class="list_con">
+                <h2>To do list</h2>
+                    <input v-model="contentInput" type="text" name="" id="txt1" class="inputtxt">
+                    <input v-on:click="fnAdd" type="button" name="" value="增加" id="btn1" class="inputbtn">
+                    
+                    <ul id="list" class="list">
+                        <li v-for='(item,index) in dataList'>
+                            <span>{{ item }}</span>
+                            <a @click="fnUp(index)" href="javascript:;" class="up"> ↑ </a>
+                            <a @click="fnDown(index)" href="javascript:;" class="down"> ↓ </a>
+                            <a @click="fnDel(index)" href="javascript:;" class="del">删除</a>
+                        </li>
+                    </ul>
+            
+                </div>
+    
+</body>
+</html>

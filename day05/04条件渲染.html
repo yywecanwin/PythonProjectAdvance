@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.box',
+                data:{
+                    a:11,
+                    age:15,
+                    isShow:false,
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- v-show 显示和隐藏 -->
+        <p v-show="isShow">v-show 显示和隐</p>
+        <!-- 2.多条件  -->
+        <p v-if="age > 30">成年大叔</p>
+        <p v-else-if="age > 18">成年人</p>
+        <p v-else-if="age > 12"> 小屁孩</p>
+        <p v-else>幼儿园</p>
+        <!-- 1.单条件 v-if创建和删除 -->
+        <p v-if="a > 10">第一个条件渲染</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+    <script>
+    window.onload = function () {
+        // 2.关联vue对象
+        var vm = new Vue({
+            el:'.box',
+            data:{
+                message:'操作数据',
+                imgData:'./meizi.png',
+            },
+            methods: {
+                fnAlert:function(){
+                    alert("操作点击事件 vue");
+                }
+            },
+        })
+
+    }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <!-- 3.操作事件 -->
+        <button v-on:click='fnAlert'>点击按钮</button>
+        <!-- 2.操作属性 -->
+        <img v-bind:src="imgData" alt="包贝儿"/>
+        <!-- 1.操作数据 -->
+        <p>{{ message }}</p>    
+    </div>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    
+</body>
+</html>

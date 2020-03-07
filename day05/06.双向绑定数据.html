@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.list',
+                data:{
+                    content:"原始内容",
+                    text:"文本域text",
+                    sex:"",
+                    like:[],
+                    address:'深圳',
+                }
+            })
+
+        }
+           
+    </script>
+</head>
+<body>
+    <div class="list">
+        <!-- 5.下拉列表 -->
+        <select v-model="address">
+            <option value="beijing">北京</option>
+            <option value="gd">广东</option>
+            <option value="sz">深圳</option>
+        </select>
+        <p>{{ address }}</p>
+
+        <!-- 4.多选 -->
+        <input type="checkbox" name="" id="" v-model="like" value="健身">健身
+        <input type="checkbox" name="" id="" v-model="like" value="游泳">游泳
+        <input type="checkbox" name="" id="" v-model="like" value="打游戏">打游戏
+        <p>{{ like }}</p>
+        <!-- 3.单选 -->
+        <input type="radio" v-model="sex" name="" id="" value="男">男
+        <input type="radio" v-model="sex" name="" id="" value="女">女
+        <p>{{ sex }}</p>
+        <!-- 2.文本域 -->
+        <textarea name="" id="" v-model="text" cols="30" rows="10"></textarea>
+        <p>{{ text }}</p>
+        <!-- 1.单纯输入框 input text v-bind：简写: -->
+        <input v-model="content" type="text"/>
+        <p>{{ content }}</p>
+
+    </div>
+    
+</body>
+</html>
+
+<!-- 
+
+
+    HTML  html()
+    js = jquery = vue 整体用法
+    1.获取标签 el:""
+    2.修改属性 v-bind：简写：
+    3.监听事件 v-on    简写：@
+    4.修改数据 {{ 模板变量 }}
+
+    条件渲染：标签 显示 和隐藏的时候  多条件 v-if  v-else if  v-else
+                v-show display:none
+    列表渲染：很多标签 重复出现 ：v-for   ul,ol,table>tr
+
+    双向绑定：v-model  input select textarea
+ -->

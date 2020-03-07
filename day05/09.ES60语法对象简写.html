@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <SCRIPT>
+        window.onload = function () {
+            //5.0 版本写法
+           var oOne = {
+               name:'张三',
+               age:18,
+           }
+           var  oTwo = new Object();
+        }
+
+        //6.0对象简写  前提条件：变量必须和  对象的属性一致才可以
+        var name = "老王";
+        var age = 18;
+
+        var oSix = {
+            name,
+            age,
+        }
+        alert(oSix.age)
+        alert(oSix.name)
+    </SCRIPT>
+</head>
+<body>
+
+</body>
+</html>

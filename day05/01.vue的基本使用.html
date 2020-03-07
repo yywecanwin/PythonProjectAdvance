@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            // 1.复习jquery获取标签，修改标签包裹内容
+            // 1.1获取标签
+            var $div = $('#one');
+
+            // 1.2 html()
+            $div.html("💗💗")
+
+            // 2 关联vue对象
+            var vm = new Vue({
+                el:'.app',
+                data:{
+                    //这是appDIV
+                    content:'🐶🐶'
+                }
+            })
+        }
+    </script>
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1.绑定标签，设置模板变量 -->
+    <div class="app">{{ content }}</div>
+    <div class="box" id="one" >老内容</div>
+    
+</body>
+</html>

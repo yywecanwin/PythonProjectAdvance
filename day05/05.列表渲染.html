@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/vue.min.js"></script>
+    <script>
+        window.onload = function () {
+            var vm = new Vue({
+                el:'.list',
+                data:{
+                    dataList:['A','B','C','D'],
+                    obj:{
+                        name:'Tom',
+                        age:88,
+                    },
+                    objList:[
+                        {
+                            name:'Tom1',
+                            age:88,
+                        },
+                        {
+                            name:'Tom2',
+                            age:88,
+                        },
+                        {
+                            name:'Tom3',
+                            age:88,
+                        },
+                    ]
+                    
+                }
+                
+            })
+        }
+    </script>
+</head>
+<body>
+    <ul class="list">
+        <li v-for="value in objList">{{ value.name }}--{{ value.age }}</li>
+
+        <li v-for="(value,key) in obj">{{ key }}----{{ value }}</li>
+        <li v-for="value in obj">{{ value }}</li>
+        <!-- 列表渲染 循环v-for-->
+        <!-- item:列表内容，index是下标 -->
+        <li v-for="(item,index) in dataList">{{ index }}-----{{ item }}</li>
+        <li v-for="item in dataList">{{ item }}</li>
+    </ul>
+    
+</body>
+</html>
