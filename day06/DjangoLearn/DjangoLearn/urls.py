@@ -16,11 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.conf.urls import url, include
 
-
-
 urlpatterns = [
     url(r'^admin/',admin.site.urls),
 
 #     总路由找子路由
     url(r'^auser/',include('auser.urls')),
+    #brouter 路由
+    url(r'brouter/',include('brouter.urls'))
 ]

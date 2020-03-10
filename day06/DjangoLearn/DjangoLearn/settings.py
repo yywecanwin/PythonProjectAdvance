@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'auser.apps.AuserConfig'
+    'auser.apps.AuserConfig',
+    'brouter.apps.BrouterConfig',
 ]
 
 # 中间件
@@ -130,7 +131,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-#静态文件
+#静态文件的路由
 STATIC_URL = '/static/'
-# 静态文件夹的配置 STATICFILES_DIRS必须写这个
+# 静态文件夹的路径 STATICFILES_DIRS必须写这个
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static_files')]
