@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'brequest.apps.BrequestConfig',
     'cresponse.apps.CresponseConfig',
     'dcookie.apps.DcookieConfig',
+    'ereview.apps.EreviewConfig',
 ]
 
 # 中间件

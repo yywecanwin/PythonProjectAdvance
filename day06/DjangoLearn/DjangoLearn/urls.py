@@ -28,7 +28,10 @@ urlpatterns = [
     url(r'^brequest/',include('brequest.urls',namespace='brequest')),
     #定义cresponse的应用
     url(r'^cresponse/',include('cresponse.urls',namespace='cresponse')),
+    # 定义cookie应用
     url(r'^dcookie/',include('dcookie.urls',namespace='dcookie')),
+    #定义session应用
+    url(r'^ereview/',include('ereview.urls',namespace="ereview")),
 
 
 
