@@ -15,5 +15,7 @@ urlpatterns = [
 
     url(r'^login_form/$',views.login_form),
     url(r'^login_not_form/$',views.login_not_form),
+    url(r'^login_header/$',views.login_header),
+
 
 ]

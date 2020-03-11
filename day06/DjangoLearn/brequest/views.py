@@ -68,3 +68,20 @@ def login_not_form(request):
     return HttpResponse('json xml  str')
 
     pass
+
+# 5.请求头  信息获取
+
+def login_header(request):
+
+    # request.META
+    print(request.META)
+    print(type(request.META))
+    # 交互的个体
+    print("888888",request.META['SERVER_PROTOCOL'])
+
+    # 获取 request 的其他属性
+    print("获取当前请求方式----：",request.method)
+    print("获取当前路径-----:",request.path)
+
+    return HttpResponse("5.请求头  信息获取")
+    pass
