@@ -13,4 +13,6 @@ urlpatterns = [
 
     url(r'brequest_query/$',views.brequest_query),
 
+    url(r'^login_form/$',views.login_form,name="login_form"),
+
 ]

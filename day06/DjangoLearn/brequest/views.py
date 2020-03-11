@@ -35,3 +35,10 @@ def brequest_query(request):
     return HttpResponse("?a=10&b=20&c=30解析查询参数")
 
     pass
+
+# 3.请求体--form表单参数的  解析
+def login_form(request):
+
+    return HttpResponse("3.form表单参数的  解析")
+
+    pass
