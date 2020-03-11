@@ -8,5 +8,5 @@ from auser import views
 
 urlpatterns = [
     #子路由
-    url(r'^index',views.index),
+    url(r'^index',views.index,name='index'),
 ]

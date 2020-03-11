@@ -1,8 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse, JsonResponse
 
 
 # Create your views here.
+from django.urls import reverse
+
 
 def custom_response(request):
 
@@ -44,5 +46,22 @@ def response_json(request):
     # 2.list_json  需要设置  safe = False 可以传list
 
     return JsonResponse(list_data,safe=False)
+    pass
+
+
+# 重定向  redicrect
+def respose_redicrect(request):
+
+    #重定向 自己的路由
+    # return redirect('/auser/index/')
+    #反向解析重定向
+    print(reverse('auser:index'))
+    return redirect(reverse('auser:index'))
+
+
+
+    # 重定向别人的网站
+    # return redirect("http://www.baidu.com")
+
     pass
 

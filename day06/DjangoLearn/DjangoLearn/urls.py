@@ -20,7 +20,7 @@ urlpatterns = [
     url(r'^admin/',admin.site.urls),
 
 #     总路由找子路由
-    url(r'^auser/',include('auser.urls')),
+    url(r'^auser/',include('auser.urls',namespace='auser')),
     #brouter 路由
     # url(r'brouter/',include('brouter.urls',namespace='brouter')),
     url(r'brouter/',include('brouter.urls')),
