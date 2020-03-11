@@ -8,6 +8,6 @@ urlpatterns = [
     # url(r'login',views.login),
     # url(r'login_one',views.login_one),
 
-    url(r'^login$',views.login),
-    url(r'^login_one$',views.login_one),
+    url(r'^login$',views.login,name="login"),
+    url(r'^login_one$',views.login_one,name="register"),
 ]

@@ -22,5 +22,6 @@ urlpatterns = [
 #     总路由找子路由
     url(r'^auser/',include('auser.urls')),
     #brouter 路由
-    url(r'brouter/',include('brouter.urls'))
+    # url(r'brouter/',include('brouter.urls',namespace='brouter')),
+    url(r'brouter/',include('brouter.urls')),
 ]
