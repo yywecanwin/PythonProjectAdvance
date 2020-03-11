@@ -13,6 +13,5 @@ def login_cookie(request):
     print(type(request.COOKIES))
     print(request.COOKIES['name'])
 
-
     return response
     pass
