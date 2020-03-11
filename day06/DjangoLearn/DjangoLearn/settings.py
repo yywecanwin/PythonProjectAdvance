@@ -139,3 +139,25 @@ USE_TZ = True
 STATIC_URL = '/static/'
 # 静态文件夹的路径 STATICFILES_DIRS必须写这个
 STATICFILES_DIRS = [os.path.join(BASE_DIR,'static_files')]
+
+
+# 配置 将session  存储到redis数据库中
+
+CACHES = {
+    "default":{
+        "BACKEND":'django_redis.cache.RedisCache',
+        "LOCATION":"redis://127.0.0.1:6379/1",
+        "OPTIONS":{
+            "CLIENT_CLASS":"django_redis.client.DefaultClient",
+        }
+    }
+}
+# SESSION_ENGINE
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+
+SESSION_CACHE_ALIAS = "default"
+
+
+
+
+
