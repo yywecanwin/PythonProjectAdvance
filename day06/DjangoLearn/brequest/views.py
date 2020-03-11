@@ -3,6 +3,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.urls import reverse
+import json
 
 
 def login(request):
@@ -38,12 +39,32 @@ def brequest_query(request):
 
 # 3.请求体--form表单参数的  解析
 def login_form(request):
-    params = request.POST()
+    params = request.POST
     print(params)
     print(type(params))
-    print(params.getlist('a'))
-    print(params.get('a'))
+    # print(params.getlist('a'))
+    # print(params.get('a'))
 
     return HttpResponse("3.form表单参数的  解析")
+
+    pass
+
+# 非form表单参数的解析
+# json xml  str
+def login_not_form(request):
+    # 解析 非form表单的参数，request.boby  返回的对象是  二进制  bytes
+    b_data = request.body
+    # print(b_data)
+    # print(type(b_data))
+    # print(b_data.decode()) #二进制转字符串
+
+    # 如果 参数 是 json的   bytes-->str--->dict
+    # 如果参数json参数，先将二进制转换成字符串，再将字符串转换成字典
+    str_one = b_data.decode()
+    dict_data = json.loads(str_one)
+    print(dict_data)
+    print(type(dict_data))
+
+    return HttpResponse('json xml  str')
 
     pass
