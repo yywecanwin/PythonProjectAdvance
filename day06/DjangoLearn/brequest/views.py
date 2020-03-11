@@ -38,6 +38,11 @@ def brequest_query(request):
 
 # 3.请求体--form表单参数的  解析
 def login_form(request):
+    params = request.POST()
+    print(params)
+    print(type(params))
+    print(params.getlist('a'))
+    print(params.get('a'))
 
     return HttpResponse("3.form表单参数的  解析")
 
