@@ -24,6 +24,7 @@ def session_response(request):
     # 4.清楚seeion 清楚指定的key 健
     # request.session.clear()
 
+
     # 5.清楚整条 session
     request.session.flush()
 
