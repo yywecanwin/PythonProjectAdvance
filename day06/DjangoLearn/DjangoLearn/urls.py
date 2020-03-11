@@ -24,4 +24,8 @@ urlpatterns = [
     #brouter 路由
     # url(r'brouter/',include('brouter.urls',namespace='brouter')),
     url(r'brouter/',include('brouter.urls')),
+    #定义request的应用
+    url(r'^brequest/',include('brequest.urls',namespace='brequest')),
+
+
 ]

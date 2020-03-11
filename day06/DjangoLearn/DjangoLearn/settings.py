@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'auser.apps.AuserConfig',
     'brouter.apps.BrouterConfig',
+    'brequest.apps.BrequestConfig',
 ]
 
 # 中间件
