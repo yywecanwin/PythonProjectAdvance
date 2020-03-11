@@ -4,5 +4,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
+    url(r'^custom_response/$',views.custom_response,name="custom_response"),
 
 ]

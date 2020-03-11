@@ -27,7 +27,7 @@ urlpatterns = [
     #定义request的应用
     url(r'^brequest/',include('brequest.urls',namespace='brequest')),
     #定义cresponse的应用
-    url(r'^cresponse/$',include('cresponse.urls',namespace='cresponse')),
+    url(r'^cresponse/',include('cresponse.urls',namespace='cresponse')),
 
 
 ]
