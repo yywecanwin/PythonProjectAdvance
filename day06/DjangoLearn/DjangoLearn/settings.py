@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'cresponse.apps.CresponseConfig',
     'dcookie.apps.DcookieConfig',
     'ereview.apps.EreviewConfig',
+    'aclassview.apps.AclassviewConfig',
 ]
 
 # 中间件

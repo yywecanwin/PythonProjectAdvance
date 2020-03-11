@@ -33,6 +33,10 @@ urlpatterns = [
     #定义session应用
     url(r'^ereview/',include('ereview.urls',namespace="ereview")),
 
+    #定义类似图
+    url(r'^aclassview/',include('aclassview.urls',namespace='aclassview')),
+
+
 
 
 ]
