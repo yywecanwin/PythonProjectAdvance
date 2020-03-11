@@ -4,7 +4,6 @@ from django.shortcuts import render
 # Create your views here.
 
 # 操作session
-
 def session_response(request):
 
     # 1.设置session 保存到服务器
@@ -23,7 +22,6 @@ def session_response(request):
 
     # 4.清楚seeion 清楚指定的key 健
     # request.session.clear()
-
 
     # 5.清楚整条 session
     request.session.flush()
