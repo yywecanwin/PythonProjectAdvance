@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'brouter.apps.BrouterConfig',
     'brequest.apps.BrequestConfig',
     'cresponse.apps.CresponseConfig',
+    'dcookie.apps.DcookieConfig',
 ]
 
 # 中间件

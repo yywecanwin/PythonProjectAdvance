@@ -28,6 +28,8 @@ urlpatterns = [
     url(r'^brequest/',include('brequest.urls',namespace='brequest')),
     #定义cresponse的应用
     url(r'^cresponse/',include('cresponse.urls',namespace='cresponse')),
+    url(r'^dcookie/',include('dcookie.urls',namespace='dcookie')),
+
 
 
 ]
