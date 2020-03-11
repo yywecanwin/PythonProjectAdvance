@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'auser.apps.AuserConfig',
     'brouter.apps.BrouterConfig',
     'brequest.apps.BrequestConfig',
+    'cresponse.apps.CresponseConfig',
 ]
 
 # 中间件
