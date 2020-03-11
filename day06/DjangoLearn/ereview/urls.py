@@ -5,5 +5,6 @@ from django.conf.urls import url
 from . import views
 
 urlpatterns = [
-    url(),
+    url(r'^session_response/$',views.session_response,name="session_response"),
+
 ]
