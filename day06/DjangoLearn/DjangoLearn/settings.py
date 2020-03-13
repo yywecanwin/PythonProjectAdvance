@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'dcookie.apps.DcookieConfig',
     'ereview.apps.EreviewConfig',
     'aclassview.apps.AclassviewConfig',
+    'btemplates.apps.BtemplatesConfig',
 ]
 
 # 中间件
