@@ -6,7 +6,30 @@
 </head>
 <body>
 
+    {% if age > 18 %}
+        <h1>成年人</h1>
+    {% else %}
+        <h1>未成年</h1>>
+
+    {% endif %}
+
+
+    {% for item in sons %}
+        <h1>{{ forloop.counter }}-----{{ item }}</h1>
+        {% empty %}
+        <h1>不好意思,没有数据</h1>
+
+
+    {% endfor %}
+    <hr>
+
     <h1>Hello world</h1>
+    <h1>姓名:{{ name }}</h1>
+    <h1>年龄:{{ age }}</h1>
+    <h1>妻子:{{ wife.name }}</h1>
+    <h1>儿子:{{ son.0 }}</h1>
+    <h1>儿子:{{ son.1 }}</h1>
+    <h1>儿子:{{ son.2 }}</h1>
 
 </body>
 </html>
