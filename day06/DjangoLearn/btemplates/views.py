@@ -25,7 +25,7 @@ class IndexView(View):
 
 
         # 渲染模板
-        return render(request,'djangoindex.html',context=content)
+        return render(request,'son.html',context=content)
 
         pass
 
