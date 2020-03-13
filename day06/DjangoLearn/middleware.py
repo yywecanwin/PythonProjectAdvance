@@ -26,5 +26,29 @@ def simple_middleware(get_response):
     pass
 
 
+# 定义自己的中间件
+def simple_middleware_two(get_response):
+
+    # 初始化 init
+    print("中间件22222----init----DEBUG模式  执行2次")
+
+    def middleware(request):
+        # 此处编写的代码会在每个请求处理视图欠被调用
+        print("中间件2222-----处理请求对象之前----")
+
+        response = get_response(request)
+
+
+        # 此处编写的代码会在每个请求处理视图之后被调用
+
+        print("中间件2222-----处理请求对象之后------")
+        return response
+
+
+        pass
+    return middleware
+
+    pass
+
 
 

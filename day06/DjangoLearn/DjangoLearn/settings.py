@@ -62,7 +62,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     #注册中间件
-    'middleware.simple_middleware'
+    'middleware.simple_middleware',
+    'middleware.simple_middleware_two',
 
 ]
 # django项目入口 第一个路由配置  ROOT_URLCONF
