@@ -36,6 +36,9 @@ urlpatterns = [
     #定义类似图
     url(r'^aclassview/',include('aclassview.urls',namespace='aclassview')),
 
+    #定义模板渲染路由
+    url(r'^btemplates/',include('btemplates.urls',namespace='btemplate')),
+
 
 
 
