@@ -2,6 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic.base import View
+from datetime import date
 
 
 class IndexView(View):
@@ -17,7 +18,9 @@ class IndexView(View):
             ],
             "wife":{
                 "name":"小丽",
-            }
+            },
+            "date_time":date(2018,1,1),
+            "data":"<a href='http://www.baidu.com'>百度</a>",
         }
 
 
