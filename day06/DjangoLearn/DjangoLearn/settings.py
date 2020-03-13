@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'ereview.apps.EreviewConfig',
     'aclassview.apps.AclassviewConfig',
     'btemplates.apps.BtemplatesConfig',
+    'adbs.apps.AdbsConfig',
 ]
 
 # 中间件
