@@ -60,6 +60,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #注册中间件
+    'middleware.simple_middleware'
+
 ]
 # django项目入口 第一个路由配置  ROOT_URLCONF
 ROOT_URLCONF = 'DjangoLearn.urls'
