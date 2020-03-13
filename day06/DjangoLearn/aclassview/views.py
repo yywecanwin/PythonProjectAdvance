@@ -23,6 +23,46 @@ def index(request):
     pass
 
 
+# 1.装饰器 装饰器函数的
+def my_decorator(func):
+    def wrapper(request,*args,**kwargs):
+        print("添加了装饰器---函数")
+        print(request.method,request.path)
+        return func(request,*args,**kwargs)
+        pass
+
+    return wrapper
+
+
+# 1.装饰器 装饰器函数的
+def my_decorator_self(func):
+    def wrapper(self,request,*args,**kwargs):
+        print("添加了装饰器---函数")
+        print(request.method,request.path)
+        return func(self,request,*args,**kwargs)
+        pass
+
+    return wrapper
+
+
+
+# 给类视图  添加装饰器
+class LoginView_decorator(View):
+    # @my_decorator_self
+    def get(self,request):
+        # 处理GET请求，返回注册页面
+        return HttpResponse("视图函数--装饰器-GET--登录页面")
+        pass
+
+    def post(self,request):
+        # 处理POST请求 ，实现注册逻辑
+        return HttpResponse('视图函数--装饰器--POST----登录请求')
+
+        pass
+    pass
+
+
+
 # 定义类视图
 class LoginView(View):
 
