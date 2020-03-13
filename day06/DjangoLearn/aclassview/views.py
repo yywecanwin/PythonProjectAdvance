@@ -79,3 +79,33 @@ class LoginView(View):
 
         pass
     pass
+
+
+# 写一个 扩展类  （新功能  给所有的类添加  装饰器）
+class DecoratorMinxin(object):
+
+    @classmethod
+    def as_view(cls,*args,**kwargs):
+        # 1.通过 多继承的 父类  实现  返回视图函数
+        view = super().as_view(*args,**kwargs)
+        # 2.给视图函数添加装饰器
+        view = my_decorator(view)
+        return view
+        pass
+
+class LoginView_Decorator_Minxin(DecoratorMinxin,View):
+
+    def get(self, request):
+        # 处理GET请求，返回注册页面
+        return HttpResponse("视图函数--Minxin-GET--登录页面")
+        pass
+
+    def post(self, request):
+        # 处理POST请求 ，实现注册逻辑
+        return HttpResponse('视图函数---Minxin-POST----登录请求')
+
+        pass
+    pass
+
+
+

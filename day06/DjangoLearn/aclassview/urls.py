@@ -19,4 +19,7 @@ urlpatterns = [
     # 类装饰器路由
     url(r'^LoginView_decorator/$', views.LoginView_decorator.as_view()),
 
+    # 扩展类装饰器路由
+    url(r'^LoginView_Decorator_Minxin/$', views.LoginView_Decorator_Minxin.as_view()),
+
 ]
