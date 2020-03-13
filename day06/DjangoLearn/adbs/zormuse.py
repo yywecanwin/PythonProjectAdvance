@@ -1,14 +1,8 @@
 # -*- coding: utf-8 -*-
 # author：yaoyao time:2020/3/13
 
-
-
-
-
 # 1.查询 基本查询  get  all count
 from datetime import date
-
-
 
 from adbs.models import BookInfo
 
@@ -22,7 +16,7 @@ BookInfo.objects.create(btitle="我不",bpub_date=date(2008,12,12))
 book = BookInfo.objects.get(id=6)
 book.delete()
 
-BookInfo.objects.filter(id=5).delete
+BookInfo.objects.filter(id=5).delete()
 
 # 改
 book = BookInfo.objects.get(id=2)
@@ -68,7 +62,8 @@ BookInfo.objects.filter(bpub_date__gt=date(1995,1,1))
 
 # 1.两个 字段 对比 过滤 bread__get = bcomment 对象
 # 1.查询阅读量大于等于评论量的图书
-from django.db.models import F
+from django.db.models import F, Sum
+
 BookInfo.objects.filter(bread__gte=F('bcomment'))
 # 2.查询评论量大于等于阅读量的二倍
 BookInfo.objects.filter(bcomment__gte=F("bread") * 2)
@@ -86,3 +81,10 @@ BookInfo.objects.filter(Q(bread__gt=20) | Q(id__lt=3))
 BookInfo.objects.filter(~Q(id=3))
 BookInfo.objects.exclude(id=3)
 
+# 聚合查询 aggregate()
+from django.db.models.aggregates import Avg,Sum,Max,Min,Count
+BookInfo.objects.aggregate(Sum('id'))
+BookInfo.objects.aggregate(Max('bread'))
+
+# 排序 order_by 降序 -
+BookInfo.objects.all().order_by("id")
