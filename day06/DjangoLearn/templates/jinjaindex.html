@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jinja的模板</title>
+</head>
+<body>
+
+    {{ age|sum }}
+
+    {# for  循环 #}
+    {% for item in son %}
+        <h2>{{ loop.cycle('奇数','偶数') }} ----- {{ item }}</h2>
+    {% endfor %}
+    {# 模板变量   #}
+    {{ name }}
+    {{ age }}
+    {{ son.0 }}
+    {{ son[1] }}
+    {{ wife['name'] }}
+    {{ wife.name }}
+</body>
+</html>
