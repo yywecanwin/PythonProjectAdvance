@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 
 # Create your views here.
+from django.utils.decorators import method_decorator
 from django.views.generic.base import View
 
 
@@ -47,6 +48,7 @@ def my_decorator_self(func):
 
 
 # 给类视图  添加装饰器
+@method_decorator(my_decorator,name='dispatch')
 class LoginView_decorator(View):
     # @my_decorator_self
     def get(self,request):

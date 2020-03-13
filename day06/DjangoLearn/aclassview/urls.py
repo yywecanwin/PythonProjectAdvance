@@ -14,6 +14,9 @@ urlpatterns = [
     # url(r'^LoginView_decorator/$',views.LoginView_decorator.as_view()),
 
     #装饰器路由
-    url(r'^LoginView_decorator/$', my_decorator(views.LoginView_decorator.as_view())),
+    url(r'^LoginView_decorator/$', views.my_decorator(views.LoginView_decorator.as_view())),
+
+    # 类装饰器路由
+    url(r'^LoginView_decorator/$', views.LoginView_decorator.as_view()),
 
 ]
