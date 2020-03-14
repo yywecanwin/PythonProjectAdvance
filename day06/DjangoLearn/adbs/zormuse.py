@@ -4,7 +4,7 @@
 # 1.查询 基本查询  get  all count
 from datetime import date
 
-from adbs.models import BookInfo
+from adbs.models import BookInfo, HeroInfo
 
 # 增加
 book = BookInfo(btitle="西游记",bpub_date=date(1990,1,1))
@@ -88,3 +88,38 @@ BookInfo.objects.aggregate(Max('bread'))
 
 # 排序 order_by 降序 -
 BookInfo.objects.all().order_by("id")
+
+
+
+
+# 1.关联查询
+# 1:n 1对应的模型类对象 ,多对应的模型类名小写_set
+# 根据 书  找书本  对应  所有 英雄
+book = BookInfo.objects.get(id=3)
+book.heroinfo_set.all()
+
+# n:1
+# 英雄  对应的  书
+
+hero = HeroInfo.objects.get(id=11)
+hero.hbook
+
+hero.hbook_id  # 1
+
+# 2.关联过滤查询  关联模型类型名小写__属性名___条件运算符=值
+# 多模型类条件查询-模型类数据: n:1
+# 查询图书 ,要求图书英雄为"东方不败"
+
+BookInfo.objects.filter(heroinfo__hname__exact="东方不败")
+
+# 由一模型类条件查询多模型类数据:一模型类关联属性名__一模型类属性名__条件运算符=值
+# 查询书名为“天龙八部”的所有英雄。
+HeroInfo.objects.filter(hbook__btitle__exact="天龙")
+
+#查询图书阅读量大于30的所有英雄
+HeroInfo.objects.filter(hbook__btitle__gt=30)
+
+
+
+
+
