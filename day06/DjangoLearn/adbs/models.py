@@ -2,9 +2,29 @@ from django.db import models
 
 # Create your models here.
 
+# 自定义管理器对象
+class BookInfoManager(models.Manager):
+
+    # 1.系统自带的方法
+    def all(self):
+
+        return super().filter(id__lt=3)
+
+    def add_book(self,title,date_time):
+        book = self.model()
+        book.btitle = title
+        book.bpub_date = date_time
+        book.save()
+        return book
+
+    pass
+
+
 #创建 模型对象
 #定义图书模型类BookInfo
 class BookInfo(models.Model):
+    # 绑定管理器对象
+    books = BookInfoManager()
     btitle = models.CharField(max_length=20, verbose_name='名称')
     bpub_date = models.DateField(verbose_name='发布日期')
     bread = models.IntegerField(default=0, verbose_name='阅读量')

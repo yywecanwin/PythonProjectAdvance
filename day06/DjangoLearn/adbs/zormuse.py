@@ -120,6 +120,20 @@ HeroInfo.objects.filter(hbook__btitle__exact="天龙")
 HeroInfo.objects.filter(hbook__btitle__gt=30)
 
 
+# querySet类型
+
+# 1.惰性加载  懒加载
+qs = BookInfo.objects.filter(id__lt=3)
+qs
+
+# 2.缓存
+[q for q in qs]
+[q for q in qs]
+
+# objects --自定义 管理器 对象 Manager
+
+# 1.系统方法  改
+# 2.新增自己的方法
 
 
 
