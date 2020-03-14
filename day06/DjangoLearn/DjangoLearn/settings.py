@@ -72,32 +72,14 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'DjangoLearn.urls'
 
 # 模板配置
-# TEMPLATES = [
-#     {
-#         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-#         'DIRS': [os.path.join(BASE_DIR, 'templates')]
-#         ,
-#         'APP_DIRS': True,
-#         'OPTIONS': {
-#             'context_processors': [
-#                 'django.template.context_processors.debug',
-#                 'django.template.context_processors.request',
-#                 'django.contrib.auth.context_processors.auth',
-#                 'django.contrib.messages.context_processors.messages',
-#             ],
-#         },
-#     },
-# ]
-
-# jinja2模板配置
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.jinja2.Jinja2',#修改1
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS':True,
-        'OPTIONS':{
-            'environment': 'jinja2_env.environment',# 修改2
-            'context_processors':[
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [os.path.join(BASE_DIR, 'templates')]
+        ,
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -106,6 +88,24 @@ TEMPLATES = [
         },
     },
 ]
+
+# jinja2模板配置
+# TEMPLATES = [
+#     {
+#         'BACKEND': 'django.template.backends.jinja2.Jinja2',#修改1
+#         'DIRS': [os.path.join(BASE_DIR, 'templates')],
+#         'APP_DIRS':True,
+#         'OPTIONS':{
+#             'environment': 'jinja2_env.environment',# 修改2
+#             'context_processors':[
+#                 'django.template.context_processors.debug',
+#                 'django.template.context_processors.request',
+#                 'django.contrib.auth.context_processors.auth',
+#                 'django.contrib.messages.context_processors.messages',
+#             ],
+#         },
+#     },
+# ]
 
 
 # 部署协议
@@ -153,10 +153,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
 # 本地化
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+# # 时区
+# TIME_ZONE = 'UTC'
 
-# 时区
-TIME_ZONE = 'UTC'
+LANGUAGE_CODE = 'zh-hans' # 使用中国语言
+TIME_ZONE = 'Asia/Shanghai' # 使用中国上海时间
 
 USE_I18N = True
 
@@ -190,7 +192,7 @@ SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 
 SESSION_CACHE_ALIAS = "default"
 
-
-
+# 配置上传文件的位置
+MEDIA_ROOT=os.path.join(BASE_DIR,"media")
 
 
